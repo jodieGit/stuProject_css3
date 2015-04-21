@@ -1,0 +1,102 @@
+Ctrl+Shift+a:快速查找使用编辑器所有功能
+1.左侧栏目录显影：Ctrl+Shift+F12
+2.文件模板配置：File》Settings》Editor>File and Code Templbtes
+             settings:Ctrl+Alt+S
+3.将当前文件加入收藏夹：Alt+Shift+F
+4.收藏夹显影：Alt+2
+5.切换代码选项卡：Alt+<-/->
+6.关闭当前代码选项卡：Ctrl+F4
+7.Ctrl+X：剪切行
+8.快注釋：Ctrl+shift+/
+9.單行注釋：Ctrl+/
+10.複製當前行：Ctrl+D
+11.跳到變量申明處：Ctrl+B
+12.顯示function的詳細信息：Ctrl+Shift+i
+13.Ctrl+W:選中單詞
+14.以單詞作為邊界跳光標位置：Ctrl+<-/->
+15.新建一個文件或其他:Alt+Insert
+16.格式化工具：Ctrl+Alt+L（該版本不存在）
+17.減少/擴大縮進:shift+tab/tab
+18.刪除一行：Ctrl+Y
+19.顯示默認值：Ctrl+p
+20.大小寫轉換：Ctrl+shift+U
+21.添加標籤：Ctrl+F11
+22.重新開始一行（無論光標在哪一個位置）：shift+enter
+23.通過文件名快速查找工程內的文件：Ctrl+Shift+N
+24.通過一個字符快速查找位置：Ctrl+Shift+Alt+N
+25.在文件內快速查找代碼：Ctrl+F
+26.查找下一個：F3
+27.查找上一個：Shift+F3
+28.文件內代碼替換：Ctrl+R
+29.指定目錄內代碼批量替換：Ctrl+shift+R
+30.指定目錄內代碼批量查找：Ctrl+Shift+F
+31.到指定行的代碼：Ctrl+G
+32.光標到代碼塊的前面或後面：Ctrl+[/]
+33.上一個/下一個方法：Alt+up/down
+34.高亮显示所选文本：Ctrl+Shift+F7
+35.打开最近打开的文件：Ctrl+E
+36.查找代码所在的位置：Alt+F1
+37.拷贝文件路径：Ctrl+Shift+c
+38.撤销：Ctrl+Z
+39.取消撤销操作：Ctrl+Shift+z
+40.在当前行的前面插入一行：Ctrl+Alt+Enter
+41.透明化所有窗口，快速查看桌面:Window+" "
+42.使当前使用的窗口最大化：Window+“向上箭头”
+43.使当前使用中的窗口贴向屏幕左侧：Window+"向左的箭头"
+44.跨显示器右移窗口：Windows+Shift+"向右的箭头"
+45.突出显示当前窗口，最小化其他的非当前使用中的窗口：Windows+Home
+46.最小化所有窗口：Windows+d
+
+
+html:
+47:html5结构：html:5 按下tab
+48.引入CSS:link:css 按下tab键
+49.引入js : script：src 按下tab键
+50.ul及li:ul+  按下tab键
+51.<a href="http://"></a>:a:link 按下tab键
+52.<a href="mailto"></a>:a:mail 按下tab键
+53.get表单：form:get 按下tab键
+54.hidden输入框：input:hidden  按下tab键
+55.id:name    ： div#name 按下tab键
+56.class:name  : div.name 按下tab键
+57.class:one,two  : div.one.two  按下tab键
+57.生成一个包含link的head   :   head>link:css
+58.两个p :  p+P
+59.3个p  : p*3
+60:创建ul下有个li同时class分别为item1,item2.。。。。:ul>li.item$*6
+
+css
+61.position :  pos/pos:s|a|r|f  按下tab键
+62.top  : t/t:a
+63.rigth  : r/r:a
+64.left  : l
+65.bottom  : b
+66.z-index : z
+67.float : fl
+68.clear : cl
+69.display ：d/d:n/d:b/d:i/d:ib
+70.visibility:v
+71:overflow:ov
+72:zoom:1  : zoo
+73:lip : cp
+74:box-sizing:bx
+75.-webkit-box-shadow:0 0 0 #000  ：bxsh:w
+
+
+76.显示当前文件的结构：Ctrl+f12
+78.当前行向上/下移动：Ctrl+shift+"向上箭头"/"向下接口"
+79.块移动：shift+alt+"向上箭头/向下箭头"
+80.ctrl+"+/-":可以折叠项目中的任何代码块，它不是选中折叠，而是自动识别折叠
+
+
+
+
+
+
+
+
+
+
+
+
+
