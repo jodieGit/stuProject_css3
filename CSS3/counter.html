@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<!--详见http://www.w3cplus.com/css3/css-counters.html-->
+
+<!-- CSS Counter其实就是一个计数器，早期在CSS中计数器仅存在于ul和ol元素。如果要使用在div这样的元素上，只能通过list-style-image或者是元素的background-image来实现。在CSS2.1规范中，介绍一种新的技术，允许开发人员使用伪类:after、：before或者伪元素::after、::before给任何元素创建自动递增计数器(类似于项目中的list-style-type) -->
+
+<!-- Counter属性需要几个属性一起配合使用 -->
+	<!-- counter-reset:必须。主要用来标识该作用域，其值可以自定义 -->
+	<!-- counter-increment:用来标识计数器与实际相关联的范围 -->
+	<!-- content:用来生成内容，其实为:before、:after或::before、::after的一个属性。在生成计数器内容，主要配合counter()一起使用 -->
+	<!-- counter()：该函数是用来设置插入计数器的值 -->
+	<!-- :before、:after或::before、::after：配合content用来生成计数器内容 -->
+<html>
+	<head>
+		<style type="text/css">
+	body{
+  		counter-reset: section 0 heading 0;
+	}
+div{
+  counter-increment: section;
+  margin: 5px;
+  cursor: pointer;
+  background: orange;
+  
+  &:before{
+    content: counter(section) '.';
+    display:inline-block;
+    width: 20px;
+    height:20px;
+    text-align: center;
+    line-height: 20px;
+    background:green;
+    color:#fff;
+    margin-right:10px;
+    transition: all .28s ease;
+  }
+  
+  &:hover {
+    &:before{
+      transform: translateX(10px);
+      
+    }
+  }
+}
+h3{
+  counter-increment: heading;
+  margin: 5px;
+  cursor: pointer;
+  background: #f36;
+  border-radius: 30px;
+  
+  &:before{
+    content: counter(heading) '.';
+    display:inline-block;
+    width: 20px;
+    height:20px;
+    text-align: center;
+    line-height: 20px;
+    background:green;
+    border-radius:100%;
+    color:#fff;
+    margin-right:10px;
+    transition: all .28s ease;
+  }
+  
+  &:hover {
+    &:before{
+      transform: translateX(10px);
+    }
+  } 
+}
+
+		</style>
+	</head>
+	<body>
+		<div class="section">section1</div>
+		<div class="section">section2</div>
+		<div class="section">section3</div>
+		<div class="section">section4</div>
+		<div class="section">section5</div>
+		<h3>header1</h3>
+		<h3>header2</h3>
+		<h3>header3</h3>
+		<h3>header4</h3>
+	</body>
+</html>

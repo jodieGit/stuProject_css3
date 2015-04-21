@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			.part1{
+				width: 300px;
+				height: 200px;
+				background: yellow;
+				display: flex;
+				justify-content:center;
+				align-items:center;
+			}
+			.part2{
+				display: flex;
+				align-items:stretch;
+				padding: 5px;
+			}
+			.part2 span{
+				border:1px solid red;
+				margin-right: 5px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- part1 垂直居中 -->
+		<div class="part1">
+			文本垂直居中显示
+		</div>
+
+		<!-- part2 登高的卡片式布局-->
+		<div class="part2">
+			<span>文本居中显示</span>
+			<span>在前端中实现居中是一件很头疼的事情，尤其是实现垂直居中，之前在一个老外的博客上看到一篇实现置中的七种方法，其中提到一种最简单的方法就是使用transform，需要5行代码可以实现完全置中</span>
+			<span>在没有用Flexible boxes之前很多卡片设计的网站都有这样一个问题，由于卡片里面的内容多少不同，而产生的不等高问题。</span>
+			<span>文本居中显示,Flexible boxes简单的实现等高列</span>
+		</div>
+	</body>
+</html>

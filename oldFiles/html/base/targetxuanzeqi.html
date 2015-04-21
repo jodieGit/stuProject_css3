@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+        <html>
+            <head>
+                <meta charset="utf-8">
+                <title>结构性伪类选择器-target</title>
+                <style type="text/css">
+                    /*:target选择器为目标选择器，用来匹配文档（页面）的url的某个标志服的目标元素。*/
+                    /*触发元素的url中标识符通常会包含一个#号，后面带有一个标识符名称，下面代码中的
+                    #brand;:target就是用来匹配id为'brand'的元素，上面代码中是那个div元素；
+                    多个url（多个target）处理，只需要#号后对的名称与id=""中的名字对应就可以了。*/
+                    #brand:target p{
+                        background: orange;
+                        color:#fff;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="menuSection" id="brand">
+                    <h2><a href="#brand">Brand</a></h2>
+                    <p>content for Brand</p>
+                </div>
+            </body>
+        </html>

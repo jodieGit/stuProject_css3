@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			<!-- 修改标签s -->
+			/**{
+				margin:0;
+				padding: 0;
+			}
+			ul{
+				width: 350px;
+				margin:50px auto;
+				border:1px solid green;
+				list-style-type: inside;
+			}
+			li{
+				border-bottom:1px solid #ccc;
+				padding:20px 0;
+				font-size: 16px;
+			}
+			li:after{
+				content:"";
+				display: table;
+				clear:both;
+			}
+			.box{
+				display: inline-block;
+				max-width: 100%;
+				vertical-align: top;
+			}
+			.title{
+				float: left;
+				background-color: orange;
+			}
+			.content{
+				background-color: #f63;
+				overflow: hidden;
+				display: block;
+			}
+			/*如若在有的浏览器内断行显示，则可以稍作修改s*/
+			/*.box{
+				display: inline-block;*/
+				/*根据以往经验，::marker默认的宽度为1em*/
+				/*max-width: calc(100%-1em);
+				vertical-align: top;
+			}*/
+			/*上述方法可能存在兼容性问题，因为calc属性*/
+			/*.box{
+				display: inline-block;
+				max-width: 96%;
+				vertical-align: top;
+			}*/
+			/*如若在有的浏览器内断行显示，则可以稍作修改e*/
+			<!-- 修改标签e -->
+
+			/*修改子元素display属性s*/
+		/*	*{
+				margin：0；
+				padding:0;
+			}
+			ul{
+				width: 350px;
+				margin:50px auto;
+				border:1px solid green;
+				list-style-position: inside;
+			}
+			li{
+				border-bottom:1px solid #ccc;
+				padding:20px 0;
+				font-size: 16px;
+				list-style-type: none;
+			}
+			li:after{
+				content:"";
+				display: table;
+				clear:both;
+			}
+			.title{
+				float: left;
+				background-color: orange;
+				display: list-item;
+				list-style-type: disc;
+			}
+			.content{
+				background-color: #f63;
+				overflow: hidden;
+				display: block;
+			}*/
+			/*修改子元素display属性e*/
+
+			/*使用伪类s*/
+			/**{
+				margin:0;
+				padding:0;
+			}
+			ul{
+				width: 350px;
+				margin:50px auto;
+				border:1px solid green;
+				list-style-position: inside;
+			}
+			li{
+				border-bottom: 1px solid #ccc;
+				padding:20px 0;
+				font-size: 16px;
+				list-style-type: none;
+			}
+			li:after{
+				content: "";
+				display: table;
+				clear: both;
+			}
+			.title{
+				float: left;
+				background-color: orange;
+			}
+			.title:before{
+				content:".";
+				display: inline-block;
+			}
+			.content{
+				background-color: #f63;
+				overflow: hidden;
+				display: block;
+			}*/
+			/*使用伪类E*/
+
+			/*有序列表可以使用CSS3中的counter()s*/
+			*{
+				margin: 0;
+				padding:0;
+			}
+			ol{
+				width: 350px;
+				margin:50px auto;
+				border:1px solid green;
+				list-style-position: inside;
+				counter-reset: list-item;
+			}
+			li{
+				border-bottom: 1px solid #ccc;
+				padding:20px 0;
+				font-size: 16px;
+				list-style-type: none;
+				counter-increment: list-item;
+			}
+			/*使用背景图片s*/
+			/*google浏览器没有问题，IE不支持*/
+			/*li{
+				border-bottom:1px solid #ccc;
+				padding:20px 0;
+				font-size: 16px;
+				list-style-type: none;
+				background:radial-gradient(circle at center,#000 10%,#fff 30%,transparent 100%);
+				background-size:20px 20px;
+				background-repeat: no-repeat;
+				background-position: 0 19px;
+				padding-left:20px;
+			}*/
+			/*使用背景图片e*/
+			/*.title:before{
+				content: counter(list-item) '.';
+				display: inline-block;
+			}*/
+			/*.title:before{
+				content: counter(list-item,disc);
+				display: inline-block;
+			}*/
+			
+			.title:before{
+				/*counter相关属性，详见counter.html*/
+				content: counter(list-item,square);
+				display: inline-block;
+			}
+
+			li:after{
+				content: "";
+				display: table;
+				clear: both;
+			}
+			.title{
+				float: left;
+				background-color: orange;
+			}
+			.content{
+				background-color: #f63;
+				overflow: hidden;
+				display: block;
+			}
+			/*有序列表可以使用CSS3中的counter()e*/
+
+			/*未来解决方案s*/
+			/*li{
+				list-style-type: lower-roman;
+			}
+			li:marker{
+				margin:0 3em 0 0;
+				color:blue;
+				font-weight: bold;
+			}*/
+			/*未来解决方案e*/
+
+		</style>
+		
+	</head>
+	<body>
+		<!-- 修改标签s -->
+		<!-- <ul>
+			<li>
+				<div class="box">
+					<span class="title">我是标题</span>
+					<span class="content">我是描述内容，我就是描述内容，我不是别的</span>
+				</div>
+			</li>
+			<li>
+				<div class="box">
+					<span class="title">我是标题</span>
+					<span class="content">我是描述内容，我就是描述内容，我不是别的</span>
+				</div>
+			</li>
+		</ul> -->
+		<!-- 修改标签E -->
+
+		<!-- 修改子元素的display属性s -->
+		<!-- <ul>
+			<li>
+				<span class="title">我是标题</span>
+				<span class="content">我是描述内容，我就是描述内容，我不是别的</span>
+			</li>
+			<li>
+				<span class="title">我是标题</span>
+				<span class="content">我是描述内容，我就是描述内容，我不是别的</span>
+			</li>
+		</ul> -->
+		<!-- 修改子元素的display属性e -->
+
+		<!-- 使用伪类s -->
+		<!-- <ul>
+			<li>
+				<span class="title">我是标题</span>
+				<span class="content">我是描述内容，我就是描述内容，我不是别的</span>
+			</li>
+			<li>
+				<span class="title">我是标题</span>
+				<span class="content">我是描述内容，我就是描述内容，我不是别的</span>
+			</li>
+		</ul> -->
+		<!-- 使用伪类e -->
+
+		<!-- 对于有序列表，可以使用CSS3中的counter()s-->
+		<ol>
+			<li>
+				<span class="title">我是标题</span>
+				<span class="content">我是描述内容，我就是描述内容，我不是别的</span>
+			</li>
+			<li>
+				<span class="title">
+					我是标题
+				</span>
+				<span class="content">我是描述内容，我就是描述内容，我不是别的</span>
+			</li>
+		</ol>
+		<!-- 对于有序列表，可以使用CSS3中的counter()e-->
+
+		<!-- 未来解决方案s -->
+		<!-- <ol>
+			<li>This is the first item.</li>
+			<li>This is the second item.</li>
+			<li>This is the third item.</li>
+		</ol> -->
+		<!-- 未来解决方案e -->
+	</body>
+</html>

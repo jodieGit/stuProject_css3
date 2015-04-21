@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>border-radius</title>
+	<style type="text/css">
+		.demo1{
+			border-radius: 10px;
+			background-color: red;
+			/*padding:20px;
+			line-height: 4;*/
+			display:inline-block;
+			width: 50px;
+			height:50px;
+		}
+		.demo2{
+			width: 50px ;
+			height: 50px;
+			border-radius: 3px 5px 10px 37px;
+			background-color: pink;
+		}
+
+		/*方法：把高度(height)设为宽度(width)的一半，并且只设置左上角和右上角的半径与元素的高度一致（大于也是可以的）*/
+		.demo3{
+			width: 100px;
+			height: 50px;
+			border-radius: 50px 50px 0 0 ;
+			background-color: pink;
+		}
+
+		/*方法：把宽度和高度设置为一致，并且四个角都设置为它们值得一半*/
+		.demo4{
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			background-color: green;
+		}
+
+		/*方法：将宽度设为高度的一半，并且将左上角和左下角的值至少设置为宽度值*/
+		.demo5{
+			width: 50px;
+			height: 100px;
+			border-radius: 50px 0 0 50px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+<!-- border-ridius不仅可以设圆角值为px值，也可以使用em，%进行设置 -->
+
+	<!-- 当元素为行内元素的之后，直接设置border-radius，效果并不是所想要的，如果想让行内元素实现同块状元素一样的效果，解决方案：1.将其设置为块状元素（必须设置宽和高）2.
+	设置padding值(line-height可以达到margin的效果)-->
+	<!-- span标签的局限性：1.设置margin对其无效，解决办法：设置为块级元素，或者使用line-height值达到相同的效果；2.width和height对其无效 -->
+	<span class="demo1">
+		圆角为用一个值
+	</span>
+
+	<!-- 可对元素进行左上、右上、右下、左下依次进行圆角设置 -->
+	<div class="demo2">
+		分别设值
+	</div>
+
+	<!-- 实心上半圆 -->
+	<div class="demo3">
+		实心上半圆
+	</div>
+
+	<!--实心圆 -->
+	<div class="demo4">
+		实心圆
+	</div>
+
+	<!-- 左半圆 -->
+	<div class="demo5">
+		左半圆
+	</div>
+</body>
+</html>

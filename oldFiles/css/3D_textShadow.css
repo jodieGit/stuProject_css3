@@ -1,0 +1,151 @@
+body{
+	background-color: #000；
+}
+h1{
+	text-align: center;
+	color:#fff;
+	font-size: 48px;
+	font-family: 'Fruktur',cursive;
+	/*右下方阴影,1px的#ccc的边框 1px 1px 1px #ccc*/
+    /*text-shadow参数意思：水平阴影位置 垂直阴影位置 模糊距离 阴影的颜色*/
+	text-shadow:1px 1px 1px #ccc,
+				0 0 10px #fff,
+				0 0 20px #fff,
+				0 0 30px #fff,
+				0 0 40px #ff00de,
+				0 0 70px #ff00de,
+				0 0 80px #ff00de,
+				0 0 100px #ff00de,
+				0 0 150px #ff00de;
+
+	/*transform属性规定如何在3D空间中呈现被嵌套的元素*/
+	transform-style:preserve-3d;
+    /* 兼容老的 Firefox */
+	-moz-transform-style:preserve-3d;
+    /*兼容Safari 和 Chrome */
+	-webkit-transform-style:preserve-3d;
+    /*兼容ie*/
+	-ms-transform-style:preserve-3d;
+    /*兼容Opera */
+	-o-transform-style:preserve-3d;
+}
+
+/*CSS3中的animation就是由keyframes这个属性来实现这样的效果。animation类似于
+transition属性，主要区别是transion需要触发一个事件才会改变css属性，而animation
+在不需要触发任何事件的情况下也可以改变属性值。*/
+	/*animation属性*/
+	.demo1{
+		/*动画属性名，也就是我们前面keyframes定义的动画名*/
+		-webkit-animation-name:'wobble';
+		/*动画的持续时间*/
+		-webkit-animation-duration:10s;
+		/*动画的频率，和transition-timing-function是一样的
+		1.ease:逐渐变慢；2.linear:匀速；3.ease-in:加速
+		4.ease-out:减速；5.ease-in-out:加速再减速
+		6.cubic-bezier:允许自定义*/
+		-webkit-animation-timing-function:ease-in-out;
+		/*动画延迟时间，用来指定动画开始时间*/
+		-webkit-animation-delay:2s;
+		/*定义循环资料，indinite为无限次*/
+		-webkit-animation-iteration-count:10;
+		/*定义动画方式，normal:动画每次循环都是向前方向；alternate动画播放在第偶数次
+		向前播放，第奇数次向后播放*/
+		-webkit-animation-direction:alternate;
+	}
+
+
+	animation:run ease-in-out 9s infinite;
+	-moz-animation:run ease-in-out 9s infinite;
+	-webkit-animation:run ease-in-out 9s infinite;
+	-ms-animation:run ease-in-out 9s infinite;
+	-0-animation:run ease-in-out 9s infinite;
+
+}
+
+@keyframes run{
+	0%{
+		transform:rotateX(-5deg) rotateY(0);
+	}
+	50%{
+		transform:rotateX(0) rotateY(180deg);
+		text-shadow:1px 1px 1px #ccc,
+					0 0 10px #fff,
+					0 0 20px #fff,
+					0 0 30px #fff,
+					0 0 40px #3eff3e,
+					0 0 70px #3effff,
+					0 0 80px #3effff,
+					0 0 100px #3effee,
+					0 0 150px #3effee;
+	}
+	100%{
+		transform:rotateX(5deg) rotateY(360deg);
+	}
+
+}
+
+@-moz-keyframes run{
+		0%{
+		-moz-transform:rotateX(-5deg) rotateY(0);
+	}
+	50%{
+		-moz-transform:rotateX(0) rotateY(180deg);
+		text-shadow:1px 1px 1px #ccc,
+					0 0 10px #fff,
+					0 0 20px #fff,
+					0 0 30px #fff,
+					0 0 40px #3eff3e,
+					0 0 70px #3effff,
+					0 0 80px #3effff,
+					0 0 100px #3effee,
+					0 0 150px #3effee;
+	}
+	100%{
+		-moz-transform:rotateX(5deg) rotateY(360deg);
+	}
+
+}
+
+@-webkit-keyframes run{
+		0%{
+		-webkit-transform:rotateX(-5deg) rotateY(0);
+	}
+	50%{
+		-webkit-transform:rotateX(0) rotateY(180deg);
+		text-shadow:1px 1px 1px #ccc,
+					0 0 10px #fff,
+					0 0 20px #fff,
+					0 0 30px #fff,
+					0 0 40px #3eff3e,
+					0 0 70px #3effff,
+					0 0 80px #3effff,
+					0 0 100px #3effee,
+					0 0 150px #3effee;
+	}
+	100%{
+		-webkit-transform:rotateX(5deg) rotateY(360deg);
+	}
+
+}
+
+@-ms-keyframes run{
+		0%{
+		-ms-transform:rotateX(-5deg) rotateY(0);
+	}
+	50%{
+		-ms-transform:rotateX(0) rotateY(180deg);
+		text-shadow:1px 1px 1px #ccc,
+					0 0 10px #fff,
+					0 0 20px #fff,
+					0 0 30px #fff,
+					0 0 40px #3eff3e,
+					0 0 70px #3effff,
+					0 0 80px #3effff,
+					0 0 100px #3effee,
+					0 0 150px #3effee;
+	}
+	100%{
+		-ms-transform:rotateX(5deg) rotateY(360deg);
+	}
+
+}

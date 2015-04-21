@@ -1,0 +1,24 @@
+常用快捷键总结：
+	1.Ctrl+N:打开新的页面	
+	2.Ctrl+Tab：页面之间进行跳转； 
+	3.Ctrl+J:合并两行内容，光标必须移动到上一行；
+	4.Ctrl+]:缩进一个级别
+	5.Ctrl+[:缩退一个级别
+	6.Ctrl+L：选择当前行
+	7.Ctrl+Enter:光标置某行文本中任意位置，需在下面另起一行
+	8.Ctrl+Shift+Enter:光标某行文本任意位置，需在上方另起一行
+	9.左右键：单字符间跳转；
+	10.Alt+左右键：粒度为一个单词；
+	11.Ctrl+左右键，在该行首末位置进行跳转					
+	12.Alt+Shift+左右键：对多单词进行选择；
+	13.Ctrl+Shift+左右键：大块连续选择；
+	15.Ctrl+Q:退出
+	16.Ctrl+W:关闭当前文档
+	17.Alt+Ctrl+N:创建制定目录文件
+
+命令：Ctrl+Shift+p:打开命令框
+	1.key Bindingd:快捷键命
+	2.保存本文的格式:Ctrl+Shift+p,输入文本后缀
+	3.调整整体缩进：Ctrl+Shift+p,输入rein
+	4.自动添加命令行时，如何获取精确命令：Ctrl+~,输入sublime.log_commands(True)，Ctrl+Shift+p,输入rein,回车
+    5.settings

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>box-shadow</title>
+	<style type="text/css">
+		/*box-shadow:x轴偏移量 y轴偏移量 [阴影模糊半径] [阴影扩展半径] [阴影颜色] [投影方式]*/
+		/*X轴偏移量：必需，水平阴影的位置，允许负值。*/
+		/*Y轴偏移量：必需，垂直阴影的位置，允许负值*/
+		/*阴影模糊半径：可选，模糊距离*/
+		/*阴影扩展半径：可选，阴影的尺寸*/
+		/*阴影的颜色：可选，阴影的颜色，省略默认为黑色*/
+		/*投影方式：可选。（设置inset时为内部阴影方式。如果省略为外阴影方式）*/
+		/*注意：inset可以写在参数的第一个或最后一个，其他位置是无效的。*/
+		/*阴影模糊半径与阴影扩展半径的区别：
+		阴影模糊半径：此参数可选，其值只能为正值，如果其值为0时，表示阴影不具有模糊效果，其值越大阴影的边缘就越模糊
+		阴影扩展半径：此参数可选，其值可以是正负值，如果是正值，则整个阴影都延展扩大，反之值为负值，则缩小*/
+		.demo1{
+			width: 50px;
+			height:50px;
+			/*为元素设置外阴影*/
+			box-shadow: 4px 2px 6px #333;
+		}
+		.demo2{
+			width: 50px;
+			height: 50px;
+			box-shadow: 4px 2px 6px #333 inset;
+			margin-top: 10px;
+		}
+		.demo3{
+			width: 50px;
+			height:50px;
+			margin-top: 10px;
+			box-shadow: 4px 2px 6px #f00,
+			    		-4px -2px 6px #000,
+			    		0px 0px 12px 5px #33cc00 inset;
+		}
+		/*X轴盘偏移量为负值*/
+		.demo4{
+			width: 100px;
+			height: 100px;
+			box-shadow: -4px 4px 6px #666;
+			margin-top: 10px;
+		}
+		.demo5{
+			width: 100px;
+			height: 100px;
+			box-shadow: 4px -4px 6px #666;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="demo1"></div>
+	<div class="demo2"></div>
+	<div class="demo3"></div>
+	<div class="demo4"></div>
+	<div class="demo5"></div>
+</body>
+</html>

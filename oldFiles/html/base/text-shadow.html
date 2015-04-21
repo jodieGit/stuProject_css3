@@ -1,0 +1,24 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>text-shadow</title>
+	<style type="text/css">
+	/*text-shadow可以用来设置文本的阴影效果，语法如下：
+		text-shadow:X-offset Y-offset blur color;*/
+		/*X-Offset:表示阴影的水平偏移距离，其值为正值时阴影向右偏移，反之向左偏移；
+		  Y-Offset:表示阴影的垂直偏移距离，其值为正值时，阴影向下偏移，反之向上偏移；
+		  Blur:阴影的模糊程度，其值不能为负值，如果值越大，阴影越模糊，反之阴影越清晰，如果不需要阴影模糊可以将blur值设为0
+		  color:阴影的颜色，其可以是rgba值*/
+		.demo{
+			width: 340px;
+			padding: 30px;
+			font:bold 55px/100%;
+			background: #c5dff8;
+			text-shadow:2px 2px 0 red;
+		}
+	</style>
+</head>
+<body>
+	<div class="demo">IMOOC</div>
+</body>
+</html>

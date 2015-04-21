@@ -1,0 +1,28 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>Gradient</title>
+	<style type="text/css">
+	/*Gradient 分为线性渐变（linear）和径向渐变（radial）*/
+	/*linear-gradient(to bottom.#fff,#999)
+	linear-gradient为渐变类型，径向为radial;
+	to bottom:等价于180deg;
+	#fff。#999表示颜色的起始点和结束点，可以有两至多个色值*/
+	/*角度：0deg      90deg      180deg     270deg
+	用英文：to top    to right:  to bottom  to left     to top left      to top right
+      作用：从下向上  从左向右   从上向下   从右向左    右下角到左上角   左下角到右上角*/
+		p{
+			width: 400px;
+			height: 150px;
+			line-height: 150px;
+			text-align: center;
+			color:#000;
+			font-size: 24px;
+			background-image: linear-gradient(to top left,red,green);
+		}
+	</style>
+</head>
+<body>
+	<p>右下角向左上角的线性渐变背景</p>
+</body>
+</html>

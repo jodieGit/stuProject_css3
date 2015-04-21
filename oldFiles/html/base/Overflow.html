@@ -1,0 +1,95 @@
+<!-- 1.overflow基本属性：
+1.visible(默认) :超出部分仍然显示  IE6例外
+2.hidden  ：隐藏
+3.scroll：有滚动条
+4.auto：智能
+5.inherit：IE8以上浏览器使用
+
+overflow-x和overflow-y:(图片大小超出制定区域):如果overflow-x和overflow-y值相同，则等同于overflow;如果overflow-x和overflow-y值不同，且其中一个属性的值被赋予visible,而另外一个被赋予hidden,auto,则visible则被重置为auto;
+overflow-x:hidden     overflow-y:hidden: -->
+
+
+<!-- 兼容性 -->
+<!-- 宽度设定机制 -->
+<!-- IE7水平方向出现滚动条，IE8则不会 -->
+<html>
+	<head>
+		<style type="text/css">
+			.box{width: 400px;height: 100px;overflow: auto;}
+			.content{width: 100%;height: 200px;background-color: #beceeb;}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="content"></div>
+		</div>
+	</body>
+</html>
+
+<!-- IE7解释：因为里面的div设置宽度为100%，IE7默认为父元素宽度400px，但是父级元素因为有滚动条，宽度其实被压缩了，没有400ox，则水平方向出现了滚动条-->
+<!-- 解决方案：直接取出width:100%的设置 -->
+
+
+<!--使用overflow的前提  -->
+<!-- 1.非display:inline  水平
+2.对应方位的尺寸限制。width/height/max-width/max-height/absolute拉伸 -->
+	<!-- ie7 底部、右部同时出现滚动条-->
+	.size{max-width:200px;max-height:300px;overflow:auto;}
+	<div class="size"><img src="mm1.jpg" width="256" height="191"></div>
+<!-- 3.对于单元格td等无效，还需要对tabel为table-layout:fixed状态才行 -->
+<!-- 4.IE7button按钮，文字越多，按钮两边的padding留白就越大，解决方案：所有按钮添加CSS属性overflow:hidden; -->
+
+<!-- 滚动条出现的条件： -->
+<!-- 1.overflow:auto/overflow:scroll     eg:内带该属性：<html><textarea> -->
+<!-- 2.草窝藏不住凤凰，潜水困不住蛟龙    eg:文字，图片超出制定区域 -->
+
+
+<!-- body/html与滚动条 -->
+<!-- 无论什么浏览器，默认滚动条均来自<html>而不是<body> -->
+<!-- 原因：新建一个空白的html页面，body默认.5em margin值，如果滚动条来自body，则应该有边框 -->
+
+
+<!-- body/html与滚动条 -->
+<!-- IE7 浏览器默认   html{overflow-y:scroll;} -->
+<!-- IE8+等浏览器默认：html{overflow:auto;} -->
+<!-- 想要实现单页布局，则html{overflow:hidden;} -->
+
+
+<!-- body/html与滚动条-js与滚动高度 -->
+<!-- Chrome浏览器：document.body.scrollTop -->
+<!-- 其他浏览器是：document.documentElement.scrollTop -->
+<!-- 建议使用：var st=document.documentElement.scrollTop||document.body.scrollTop -->
+
+
+<!-- overflow的padding-bottom缺失现象 -->
+<!-- .box{width:400px;height:100px;padding:100px 0;overflow:auto;} -->
+<!-- Chrome浏览器中，滚动条拉动下，会出现上下的padding值，其他浏览器都不会出现舌质淡额上下的padding值，最终会导致scrollHeight值 -->
+
+
+<!-- 滚动条的宽度机制 -->
+<!-- 滚动条会占用容器的可用宽度或高度 -->
+
+
+<!-- 滚动条宽度值 -->
+.box{width:400px;overflow:scroll;}
+<div class="box">
+	<div id="in" class="in"></div>
+</div>
+
+console.log(400-document.getElementById("in").clientWidth);
+
+<!--结果：IE7+/Chrome/Firefox(Win7) 均是17像素-->
+
+
+
+<!-- overflow:auto的潜在布局隐患 -->
+<!-- 滚动条会占用容器尺寸，原本和谐的布局，滚动条出现后可能会挂掉 -->
+
+
+<!-- 水平居中跳转问题 -->
+.container{width:1150px;margin:0 auto;}
+<!-- 解决方案 -->
+1.html{overflow-y:scroll;}
+2.container{padding-left:calc(100vw-100%);}
+<!-- 100vw是浏览器宽度  100%可用内容宽度  IE9+-->
+

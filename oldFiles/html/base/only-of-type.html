@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+        <html>
+            <head>
+                <meta charset="utf-8">
+                <title>only-of-type选择器</title>
+                <style type="text/css">
+                    .wrapper>p:only-of-type{
+                        background-color: green;
+                    }
+                    .wrapper>div:only-of-type{
+                        background-color: orange;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="wrapper">
+                    <p>我是一个段落</p>
+                    <p>我是一个段落</p>
+                    <p>我是一个段落</p>
+                </div>
+
+                <div class="wrapper">
+                    <p>我是一个段落</p>
+                </div>
+
+                <div class="wrapper">
+                    <div>我是一个Div元素</div>
+                </div>
+            </body>
+        </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>@font-face</title>
+	<style type="text/css">
+	/*@font-face:能够加载服务器端的字体文件，让浏览器端可以显示用户电脑里没有安装的字体*/
+	/*语法：
+	@font-face{
+		font-family: 字体名称；
+		src:字体文件在服务器上的相对或绝对路径;
+		}*/
+	@font-face{
+		font-family: "MOOC Font";
+		src:url("http://www.imooc.com/Amaranth-BoldItalic.otf");
+	}
+	.demo{
+		width: 340px;
+		padding: 30px;
+		color:#566f89;
+		background: #000;
+		font-size: 58px;
+		font-family: "MOOC Font";
+	}
+	</style>
+</head>
+<body>
+	<div class="demo">IMOOC</div>
+</body>
+</html>
