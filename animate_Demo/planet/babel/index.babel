@@ -1,0 +1,123 @@
+var canvas = document.getElementById("canvas"),
+    canvas2 = document.getElementById("canvas2"),
+    context = canvas.getContext("2d"),
+    context2 = canvas2.getContext("2d"),
+    width = canvas.width = canvas2.width = window.innerWidth,
+    height = canvas.height = canvas2.height = window.innerHeight;
+
+window.onresize = () => {
+  width = canvas.width = canvas2.width = window.innerWidth;
+  height = canvas.height = canvas2.height = window.innerHeight;
+}
+
+class Vector{
+  constructor(x, y){
+    this._x = x;
+    this._y = y;
+  }
+  
+  setX(value){
+    this._x = value;
+  }
+  
+  getX(){
+    return this._x;
+  }
+  
+  setY(value){
+    this._y = value;
+  }
+  
+  getY(){
+    return this._y;
+  }
+  
+  setAngle(angle){
+    var length = this.getLength();
+    this._x = Math.cos(angle) * length;
+    this._y = Math.sin(angle) * length;
+  }
+  
+  getAngle(){
+    return Math.atan2(this._y, this._x);
+  }
+  
+  setLength(length){
+    var angle = this.getAngle();
+    this._x = Math.cos(angle) * length;
+    this._y = Math.sin(angle) * length;
+  }
+  
+  getLength(){
+    return Math.sqrt(this._x * this._x + this._y * this._y);
+  }
+  
+  addTo(v2){
+    this._x += v2.getX();
+    this._y += v2.getY();
+  }
+}
+
+class Particle{
+  constructor(x, y, speed, direction){
+    this.position = new Vector(x, y);
+    this.velocity = new Vector(0, 0);
+    this.velocity.setLength(speed);
+    this.velocity.setAngle(direction);
+  }
+  /* not use this time
+  accelerate(accel){
+    this.velocity.addTo(accel);
+  }
+  */
+  update(){
+    this.position.addTo(this.velocity);
+  }
+  
+  angleTo(p2){
+    return Math.atan2(p2.position.getY() - this.position.getY(), p2.position.getX() - this.position.getX());
+  }
+  
+  distanceTo(p2){
+    var dx = p2.position.getX() - this.position.getX();
+    var dy = p2.position.getY() - this.position.getY();
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+  
+  gravitateTo(p2){
+    var grav = new Vector(0, 0),
+        dist = this.distanceTo(p2);
+    grav.setLength(p2.mass / (dist * dist));
+    grav.setAngle(this.angleTo(p2));
+    this.velocity.addTo(grav);
+  }
+}
+
+var sun = new Particle(width/2, height/2, 0, 0),
+    planet = new Particle(width/2 + 200, height/2, 10, -Math.PI/2);
+
+//sun.mass =64500;
+sun.mass = 20000;
+update();
+function update(){
+  context.clearRect(0, 0, width ,height);
+  planet.gravitateTo(sun);
+  planet.update(); 
+  
+  context.fillStyle = "#fc2"
+  context.beginPath();
+  context.arc(sun.position.getX(), sun.position.getY(), 20, 0, Math.PI*2, false);
+  context.fill();
+  
+  context.fillStyle= "#0ff"
+  context.beginPath();
+  context.arc(planet.position.getX(), planet.position.getY(), 5, 0, Math.PI *2, false);
+  context.fill();
+  
+
+  context2.fillStyle = "#fff"
+  context2.beginPath();
+  context2.arc(planet.position.getX(), planet.position.getY(), 1, 0, Math.PI *2, false);
+  context2.fill();
+  requestAnimationFrame(update);
+}
